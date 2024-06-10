@@ -1,0 +1,188 @@
+{%include 'adminheader.html'%}
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD3MPnSnyWwNmpnVEFkaddVvy_GWtxSejs&sensor=false"></script>
+    <script type="text/javascript">
+        // window.onload = function () {
+          function myFunction(){
+            var mapOptions = {
+                center: new google.maps.LatLng(9.9763482, 76.286272),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            google.maps.event.addListener(map, 'click', function (e) {
+                alert("Latitude: " + e.latLng.lat() + "\r\nLongitude: " + e.latLng.lng());
+              document.getElementById('lat').value = e.latLng.lat();
+                document.getElementById('lon').value = e.latLng.lng();
+           
+
+            });
+        }
+    </script>
+
+
+      <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel" >
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="static/img/carousel-bg-1.jpg" alt="Image" style="height: 1000px">
+                    <div class="carousel-caption d-flex align-items-center">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center justify-content-lg-start">
+<center>
+	<h1 style="color: white">Manage Other Place</h1>
+	<form method="post">
+		{% if data['otherplaceup']%}
+		<table class="table" style="width: 500px;color: white">
+			<tr>
+			<th>Place</th>
+			<td><select name="pla" required="" class="form-control">
+
+				<option value="{{data['otherplaceup'][0]['place_id']}}">{{data['otherplaceup'][0]['place']}}</option>
+
+				<option>--Select--</option>
+				{% for row in data['place']%}
+				<option value="{{row['place_id']}}">{{row['place']}}</option>
+				{% endfor %}
+			</select></td>
+		</tr>
+		<tr>
+			<th>name</th>
+			<td><input type="text" required="" class="form-control" value="{{data['otherplaceup'][0]['name']}}" name="name"></td>
+		</tr>
+			<tr>
+			<th>details</th>
+			<td><input type="text" required="" class="form-control"  value="{{data['otherplaceup'][0]['details']}}" name="details"></td>
+		</tr>
+		<tr>	
+           <th>Latitude</th>
+            <td><input type="text"  name="lat" value="{{data['otherplaceup'][0]['latitude']}}" class="form-control" id="lat">
+            <a class="btn btn-success" onclick="myFunction();"><b>View Map</b></a>
+            </td>
+        </tr>
+         <tr>
+            <th>Longitude</th>
+            <td ><br><input type="text" name="lon" value="{{data['otherplaceup'][0]['longitude']}}"  class="form-control" id="lon"></td>
+        </tr>
+		<tr>
+			<th>phone</th>
+			<td><input type="text" required="" class="form-control" value="{{data['otherplaceup'][0]['phone']}}"  name="phone"></td>
+		</tr>
+		<tr>
+			<th>email</th>
+			<td><input type="text"  required="" class="form-control" value="{{data['otherplaceup'][0]['email']}}"  name="email"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success"  name="update"></td>
+		</tr>
+	</table>
+	<table >
+       <tr>
+
+          <td>
+	     <div id="dvMap" style="width: 600px; height: 400px"></div>
+
+	   </td>
+
+</tr>
+    </table>
+	{% else %}
+	<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>Place</th>
+			<td><select  name="pla" required="" class="form-control">
+				<option>--Select--</option>
+				{% for row in data['place']%}
+				<option value="{{row['place_id']}}">{{row['place']}}</option>
+				{% endfor %}
+			</select></td>
+		</tr>
+		<tr>
+			<th>name</th>
+			<td><input type="text"  required="" class="form-control"name="name"></td>
+		</tr>
+		<tr>
+			<th>details</th>
+			<td><input type="text" required="" class="form-control" name="details"></td>
+		</tr>
+		<tr>	
+           <th>Latitude</th>
+            <td><input type="text" name="lat"  class="form-control" id="lat">
+            <a class="btn btn-success" onclick="myFunction();"><b>View Map</b></a>
+            </td>
+        </tr>
+         <tr>
+            <th>Longitude</th>
+            <td ><br><input type="text" name="lon"  class="form-control" id="lon"></td>
+        </tr>
+		<tr>
+			<th>phone</th>
+			<td><input type="text" required="" class="form-control" name="phone"></td>
+		</tr>
+		<tr>
+			<th>email</th>
+			<td><input type="text"  required="" class="form-control"name="email"></td>
+		</tr>
+		
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="addotherplace"></td>
+		</tr>
+	</table>
+	<table>
+       <tr>
+
+          <td>
+	     <div id="dvMap" style="width: 600px; height: 400px"></div>
+
+	   </td>
+
+</tr>
+    </table>
+	{% endif %}
+	</form>
+</center>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 </div></div></div>
+<center>
+	<h1>View  OtherPlace</h1>
+	<table class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>name</th>
+			<th>details</th>
+			<th>Place</th>
+		
+			<th>phone</th>
+			<th>email</th>
+
+
+		</tr>
+		{% for row in data['otherplace']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['name']}}</td>
+			<td>{{row['details']}}</td>
+
+
+			<td><a class="btn btn-primary" href="http://www.google.com/maps?q={{row['latitude'] }},{{row['longitude'] }}">Click Me</a></td>
+
+
+			<td>{{row['phone']}}</td>
+			<td>{{row['email']}}</td>
+
+			<td><a class="btn btn-success" href="?action=delete&opid={{row['otherplace_id']}}">delete</a></td>
+			<td><a  class="btn btn-success"href="?action=update&opid={{row['otherplace_id']}}">Update</a></td>
+		</tr>
+
+		{%endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}

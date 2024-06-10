@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/bike"
+    android:orientation="vertical"
+    tools:context=".Registration">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="160dp" />
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your Firstname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="247dp" />
+
+    <EditText
+        android:id="@+id/lname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your lastname"
+        tools:layout_editor_absoluteX="76dp"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <EditText
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your place"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="406dp" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your phone"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="470dp" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your email"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="524dp" />
+
+    <EditText
+        android:id="@+id/licence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your licencedetails"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="406dp" />
+
+
+    <EditText
+        android:id="@+id/aadaar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your Aadhaar Number"
+        tools:layout_editor_absoluteX="84dp"
+        tools:layout_editor_absoluteY="406dp" />
+
+
+
+    <EditText
+        android:id="@+id/uname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your username"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="500dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textColorHint="#fff"
+        android:inputType="textPersonName"
+        android:hint="enter your password"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="495dp" />
+    <Button
+        android:id="@+id/registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+
+        tools:layout_editor_absoluteX="179dp"
+        tools:layout_editor_absoluteY="585dp" />
+</LinearLayout>

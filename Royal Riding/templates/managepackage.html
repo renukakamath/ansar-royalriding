@@ -1,0 +1,85 @@
+{%include 'adminheader.html'%}
+
+<!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="static/img/carousel-bg-1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex align-items-center">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center justify-content-lg-start">
+<center>
+	<h1 style="color: white">Manage packages</h1>
+	<form method="post">
+		{% if data['packagesup']%}
+		<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>packages</th>
+			<td><input type="text" required="" class="form-control" value="{{data['packagesup'][0]['packagename']}}" name="packages"></td>
+		</tr>
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" required="" class="form-control" value="{{data['packagesup'][0]['Amount']}}" name="amount"></td>
+		</tr>
+		<tr>
+			<th>Details</th>
+			<td><textarea name="details" required="" class="form-control">{{data['packagesup'][0]['details']}}</textarea></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="update"></td>
+		</tr>
+	</table>
+	{% else %}
+	<table class="table" style="width: 500px;color: white">
+		<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>packages</th>
+			<td><input type="text" required="" class="form-control" name="packages"></td>
+		</tr>
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" required="" class="form-control" name="amount"></td>
+		</tr>
+		<tr>
+			<th>Details</th>
+			<td><textarea name="details" required="" class="form-control"></textarea></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="addpackages"></td>
+		</tr>
+	</table>
+	{% endif %}
+	</form>
+</center>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div></div></div>
+<center>
+	<h1>View packages</h1>
+	<table class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>packages</th>
+			<th>Amount</th>
+			<th>Details</th>
+
+		</tr>
+		{% for row in data['package']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['packagename']}}</td>
+			<td>{{row['Amount']}}</td>
+			<td>{{row['details']}}</td>
+			<td><a class="btn btn-success" href="?action=delete&pid={{row['package_id']}}&plid={{row['place_id']}}">delete</a></td>
+			<td><a class="btn btn-success" href="?action=update&pid={{row['package_id']}}&plid={{row['place_id']}}">Update</a></td>
+		
+		</tr>
+
+		{%endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}

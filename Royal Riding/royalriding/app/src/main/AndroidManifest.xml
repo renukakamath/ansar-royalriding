@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.royalriding">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Royalriding"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".Viewhotels"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPackages"
+            android:exported="false" />
+        <activity
+            android:name=".Userviewchatperson"
+            android:exported="false" />
+        <activity
+            android:name=".Viewworkshop"
+            android:exported="false" />
+        <activity
+            android:name=".Uploadimage"
+            android:exported="false" />
+        <activity
+            android:name=".viewrequest"
+            android:exported="false" />
+        <activity
+            android:name=".Viewtrip"
+            android:exported="false" />
+        <activity
+            android:name=".Viewevent"
+            android:exported="false" />
+        <activity
+            android:name=".Viewclub"
+            android:exported="false" />
+
+        <service android:name=".LocationService" />
+
+        <activity
+            android:name=".Searchplace"
+            android:exported="false" />
+        <activity
+            android:name=".Updatelicencedetails"
+            android:exported="false" />
+        <activity
+            android:name=".Registration"
+            android:exported="false" />
+        <activity
+            android:name=".Userhome"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".ChatHere"
+            android:exported="false" />
+        <activity
+            android:name=".Ipsettings"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

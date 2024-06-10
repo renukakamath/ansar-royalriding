@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bike"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Userhome">
+
+    <Button
+        android:id="@+id/licencedetails"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Add licence details"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <Button
+        android:id="@+id/searchplace"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Search Place"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <Button
+        android:id="@+id/viewclub"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View Club"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="354dp" />
+
+    <Button
+        android:id="@+id/viewevents"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View Events"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="442dp" />
+
+    <Button
+        android:id="@+id/viewtrip"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View Trips"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="529dp" />
+
+    <Button
+        android:id="@+id/Viewrequest"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View Request"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="594dp" />
+    <Button
+        android:id="@+id/Viewwork"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View works"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="594dp" />
+
+
+    <Button
+        android:id="@+id/viewhotels"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View hotels"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="264dp" />
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="View chatted person"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="594dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="594dp" />
+</LinearLayout>

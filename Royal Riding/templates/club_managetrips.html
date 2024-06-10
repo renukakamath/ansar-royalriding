@@ -1,0 +1,121 @@
+{% include 'clubheader.html'%}
+<!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="static/img/carousel-bg-1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex align-items-center">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center justify-content-lg-start">
+<center>
+	<h1 style="color: white">Manage Trip</h1>
+	<form method="post" enctype="multipart/form-data">
+		{% if data['tripup']%}
+		<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>Trip</th>
+			<td><input type="text" required="" class="form-control" value="{{data['tripup'][0]['trip']}}" name="trip"></td>
+		</tr>
+		<tr>
+			<th>place</th> 
+			<td><input type="text"  required="" class="form-control" value="{{data['tripup'][0]['place']}}" name="place"></td>
+		</tr>
+
+		</tr>
+			<tr>
+			<th>details</th>
+			<td><input type="text"  required="" class="form-control" value="{{data['tripup'][0]['details']}}" name="details"></td>
+		</tr>
+		<tr>
+			<th>From Date</th>
+			<td><input type="date" required="" class="form-control" value="{{data['tripup'][0]['from_date']}}" name="fdate"></td>
+		</tr>
+		<tr>
+			<th>To date</th>
+			<td><input type="date" required="" class="form-control" value="{{data['tripup'][0]['to_date']}}" name="tdate"></td>
+		</tr>
+
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" required="" class="form-control" value="{{data['tripup'][0]['amount']}}" name="amount"></td>
+		</tr>
+	
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="update"></td>
+		</tr>
+	</table>
+
+
+	{% else %}
+	<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>Trip</th>
+			<td><input type="text"  required="" class="form-control"name="trip"></td>
+		</tr>
+		<tr>
+			<th>details</th>
+			<td><input type="text" required="" class="form-control" name="details"></td>
+		</tr>
+		<tr>
+			<th>place</th>
+			<td><input type="text" required="" class="form-control" name="place"></td>
+		</tr>
+		<tr>
+			<th>From Date</th>
+			<td><input type="date" required="" class="form-control" name="fdate"></td>
+		</tr>
+		<tr>
+			<th>To date</th>
+			<td><input type="date" required="" class="form-control" name="tdate"></td>
+		</tr>
+	
+	<tr>
+			<th>Amount</th>
+			<td><input type="text" required="" class="form-control" name="amount"></td>
+		</tr>
+	
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="addtrip"></td>
+		</tr>
+	</table>
+	
+	{% endif %}
+	</form>
+</center>
+</div></div></div></div></div></div></div>
+<center>
+	<h1>View Trip</h1>
+	<table class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>Trip</th>
+			<th>place</th>
+			<th>details</th>
+			<th>From Date</th>
+			<th>To date</th>
+			<th>Amount</th>
+
+
+		</tr>
+		{% for row in data['trip']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['trip']}}</td>
+			<td>{{row['place']}}</td>
+			<td>{{row['details']}}</td>
+			<td>{{row['from_date']}}</td>
+			<td>{{row['to_date']}}</td>
+			<td>{{row['amount']}}</td>
+
+			
+
+			<td><a class="btn btn-success" href="?action=delete&tid={{row['trip_id']}}">delete</a></td>
+			<td><a class="btn btn-success" href="?action=update&tid={{row['trip_id']}}">Update</a></td>
+		</tr>
+
+		{%endfor %}
+	</table>
+</center>
+
+{% include 'footer.html'%}

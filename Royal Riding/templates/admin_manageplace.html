@@ -1,0 +1,64 @@
+{%include 'adminheader.html'%}
+
+<!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="static/img/carousel-bg-1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex align-items-center">
+                        <div class="container">
+                            <div class="row align-items-center justify-content-center justify-content-lg-start">
+<center>
+	<h1 style="color: white">Manage Place</h1>
+	<form method="post">
+		{% if data['placeup']%}
+		<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>Place</th>
+			<td><input type="text" required="" class="form-control" value="{{data['placeup'][0]['place']}}" name="place"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="update"></td>
+		</tr>
+	</table>
+	{% else %}
+	<table class="table" style="width: 500px;color: white">
+		<tr>
+			<th>Place</th>
+			<td><input type="text" required="" class="form-control" name="place"></td>
+		</tr>
+		<tr>
+			<td align="center" colspan="2"><input type="submit" class="btn btn-success" name="addplace"></td>
+		</tr>
+	</table>
+	{% endif %}
+	</form>
+</center>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div></div></div>
+<center>
+	<h1>View Place</h1>
+	<table class="table" style="width: 500px">
+		<tr>
+			<th>Slno</th>
+			<th>Place</th>
+
+		</tr>
+		{% for row in data['place']%}
+		<tr>
+			<td>{{loop.index}}</td>
+			<td>{{row['place']}}</td>
+			<td><a class="btn btn-success" href="?action=delete&pid={{row['place_id']}}">delete</a></td>
+			<td><a class="btn btn-success" href="?action=update&pid={{row['place_id']}}">Update</a></td>
+			<td><a  class="btn btn-success" href="managepackage?pid={{row['place_id']}}">Manage Package</a></td>
+		</tr>
+
+		{%endfor %}
+	</table>
+</center>
+{% include 'footer.html'%}
